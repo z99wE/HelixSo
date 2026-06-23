@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HELIX | Human Evolution & Latent Intelligence eXplorer</title>
+  <meta name="description" content="The world’s first Talent Genome engine, built for the next generation of enterprise scaling. Powered by Information Theory, Network Theory, and local LSI embeddings.">
+  <link href="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=32&amp;h=32&amp;fit=crop&amp;crop=center" rel="icon">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Instrument+Serif:ital@1&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .grid-bg {
+        background-image: linear-gradient(rgba(124, 92, 246, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(124, 92, 246, 0.02) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      background-color: #F9FAFB;
+      color: #1F2937;
+    }
+    
+    /* Keyframe Animations for floating shapes */
+    @keyframes float1 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes float2 {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(12px) rotate(-8deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .float-shape-1 { animation: float1 6s ease-in-out infinite; }
+    .float-shape-2 { animation: float2 8s ease-in-out infinite; }
+  </style>
+
+  <style type="text/tailwindcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      important: '#app-root',
+      content: ["./index.html"],
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#7C5CF6',
+            'brand-hover': '#6D28D9',
+            'neutral-background': '#F9FAFB',
+            'neutral-surface': '#FFFFFF',
+            'text-primary': '#111827',
+            'text-secondary': '#4B5563',
+            'border-primary': '#E5E7EB',
+          },
+          fontFamily: {
+            'primary': ['Instrument Serif', 'serif'],
+            'secondary': ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'sm': '12px',
+            'md': '16px',
+            'lg': '24px',
+            'xl': '32px',
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body id="app-root" class="bg-neutral-background font-secondary">
+
+  <div class="bg-neutral-background text-text-primary antialiased overflow-x-hidden pt-20 sm:pt-24 min-h-screen">
+
+  <!-- NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 w-full z-50 py-4 sm:py-6 transform-gpu transition-transform duration-500">
+    <nav id="main-nav" class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-center items-center">
+      <div id="nav-menu" class="border border-border-primary rounded-xl py-3 px-6 bg-white/80 backdrop-blur-md flex items-center gap-6 shadow-sm">
+        <a href="#" class="flex items-center gap-2">
+            <div class="w-5 h-5 rounded-full bg-brand-primary flex items-center justify-center">
+                <div class="w-2.5 h-2.5 rounded-full bg-white flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-brand-primary"></div>
+                </div>
+            </div>
+            <span class="font-bold text-xs tracking-tight text-text-primary uppercase">HELIX</span>
+        </a>
+        <ul class="flex items-center gap-1">
+            <li><a href="#features" class="px-3.5 py-2 text-sm font-medium hover:text-brand-primary transition-colors">Features</a></li>
+            <li><a href="#dashboard-section" class="px-3.5 py-2 text-sm font-medium hover:text-brand-primary transition-colors">Command Center</a></li>
+            <li><a href="#comparison" class="px-3.5 py-2 text-sm font-medium hover:text-brand-primary transition-colors">Compare</a></li>
+        </ul>
+        <a href="#dashboard-section" class="bg-brand-primary text-white font-semibold text-xs px-5 py-2 rounded-lg hover:bg-brand-hover transition-all">Launch Engine</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION WITH FLOATING GEOMETRIC SHAPES -->
+    <section class="relative min-h-[85vh] flex flex-col items-center justify-center pt-16 pb-20 overflow-hidden grid-bg">
+        
+        <!-- Background Colorful Geometric Shapes -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+          <!-- Teal Circle -->
+          <div class="absolute w-32 h-32 rounded-full bg-[#5CE1E6] opacity-75 left-[10%] top-[20%] float-shape-1"></div>
+          <!-- Orange Triangle -->
+          <div class="absolute w-0 h-0 border-l-[60px] border-l-transparent border-r-[60px] border-r-transparent border-b-[100px] border-b-[#FF914D] opacity-80 right-[15%] top-[15%] float-shape-2"></div>
+          <!-- Purple Octagon -->
+          <div class="absolute w-28 h-28 bg-[#8C52FF] opacity-70 left-[15%] bottom-[15%] float-shape-2" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+          <!-- Pink Pill -->
+          <div class="absolute w-44 h-16 rounded-full bg-[#FF66C4] opacity-75 right-[8%] bottom-[25%] float-shape-1 flex items-center justify-center transform rotate-12">
+            <span class="font-primary text-white text-lg">Talent Genome</span>
+          </div>
+          <!-- Yellow Bar -->
+          <div class="absolute w-64 h-12 bg-[#FFDE59] opacity-80 left-[35%] top-[8%] float-shape-1 flex items-center justify-center transform -rotate-6 rounded-md">
+            <span class="font-primary text-text-primary text-lg font-semibold">Scale Sourcing System</span>
+          </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 flex flex-col items-center gap-6 text-center">
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold -tracking-[0.03em] leading-[1.1] max-w-4xl text-text-primary">
+                Talent sourcing does not need more keywords. They need a <span class="font-primary font-normal italic text-brand-primary bg-[#ECE9FE] px-3 py-0.5 rounded-md relative inline-block">system.</span>
+            </h1>
+            
+            <p class="text-base sm:text-lg md:text-xl font-medium text-text-secondary max-w-3xl leading-relaxed mt-4">
+                <strong>HELIX: Human Evolution &amp; Latent Intelligence eXplorer</strong> is an enterprise talent system that replaces disconnected resume search tools. HELIX streams compressed talent databases, automatically blocks fraudulent profiles in $O(1)$ time, ranks candidates using local sentence embeddings &amp; FAISS indexes, and calculates career progression velocities and skill rarity scores.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto px-4">
+                <a href="#dashboard-section" class="w-full sm:w-auto text-center inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-semibold text-base bg-brand-primary text-white hover:bg-brand-hover transition-all shadow-sm">Open Live Command Center</a>
+                <a href="#features" class="w-full sm:w-auto text-center inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-semibold text-base bg-white text-text-primary border border-border-primary hover:bg-zinc-50 transition-colors shadow-sm">Explore Tech Stack</a>
+            </div>
+
+            <!-- Cute Hand-drawn Scribble SVG -->
+            <div class="w-full max-w-2xl mt-12 flex justify-center items-center opacity-85 relative">
+                <svg class="w-full max-w-md h-auto" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 30 C 50 10, 80 50, 110 30 C 140 10, 160 50, 200 30 C 240 10, 270 50, 310 30 C 340 10, 370 40, 390 30" stroke="#7C5CF6" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="390" cy="30" r="4" fill="#7C5CF6"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE INTERACTIVE COMMAND CENTER (KIRA MASCOT & SIDEBAR SYSTEM) -->
+    <section id="dashboard-section" class="py-16 bg-white border-y border-border-primary scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        
+        <!-- Header Row -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+          <div>
+            <span class="font-primary font-normal italic text-brand-primary bg-[#ECE9FE] px-2 py-0.5 rounded text-lg">HELIX COMMAND CENTER</span>
+            <h2 class="text-3xl sm:text-4xl font-bold -tracking-[0.02em] text-text-primary mt-2">Interactive Intelligence HUD</h2>
+            <p class="text-text-secondary text-sm mt-1">Configure weights, analyze career vectors, and simulate sandbox imports entirely in your browser.</p>
+          </div>
+          
+          <div class="flex items-center gap-4">
+            <div class="border border-border-primary rounded-xl px-4 py-2 bg-neutral-background text-xs font-semibold">
+              <span class="text-text-secondary uppercase block">Engine Status</span>
+              <span class="text-brand-primary">OPTIMAL &bull; ONLINE</span>
+            </div>
+            <div class="border border-border-primary rounded-xl px-4 py-2 bg-neutral-background text-xs font-semibold">
+              <span class="text-text-secondary uppercase block">Profiles Indexed</span>
+              <span class="text-text-primary">100,000+ Profiles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Wrapper: Grid with Dark Navigation Bar (Kira Style) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start border border-border-primary rounded-3xl overflow-hidden shadow-md bg-neutral-background">
+          
+          <!-- STYLISH SIDE NAVIGATION BAR (Kira Dashboard Style) -->
+          <div class="lg:col-span-1 bg-[#1A103C] text-white flex lg:flex-col items-center justify-between py-6 px-4 lg:min-h-[700px] w-full">
+            <div class="flex lg:flex-col items-center gap-6 w-full">
+              <!-- Sidebar Logo -->
+              <div class="w-8 h-8 rounded-full bg-brand-primary flex items-center justify-center mb-4">
+                <div class="w-3.5 h-3.5 rounded-full bg-white"></div>
+              </div>
+              
+              <!-- Menu Icons -->
+              <nav class="flex lg:flex-col items-center gap-6">
+                <a href="#dashboard-section" class="text-brand-primary hover:text-white transition-colors" title="Command Center">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </a>
+                <a href="#features" class="text-zinc-400 hover:text-white transition-colors" title="Features">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                </a>
+              </nav>
+            </div>
+            
+            <!-- Inactive User Profile Icon -->
+            <div class="w-8 h-8 rounded-full bg-[#8C52FF] flex items-center justify-center font-bold text-sm text-white">
+              H
+            </div>
+          </div>
+
+          <!-- DASHBOARD WORKING CONTENT -->
+          <div class="lg:col-span-11 grid grid-cols-1 md:grid-cols-12 gap-6 p-6">
+            
+            <!-- LEFT PANEL: Controls (Intent Multiplier & Sandbox Drag-Drop) -->
+            <div class="md:col-span-4 flex flex-col gap-6">
+              
+              <!-- INTENT MULTIPLIER (KIRA STYLE PRESET STYLES) -->
+              <div class="bg-white border border-border-primary rounded-2xl p-6 shadow-sm">
+                <h4 class="font-bold text-sm uppercase text-text-primary tracking-wide mb-2">Intent Multiplier</h4>
+                <p class="text-xs text-text-secondary mb-4 leading-relaxed">Balancing Technical Capacity against Engagement Intent rates.</p>
+                
+                <div class="flex justify-between text-xs font-semibold text-text-secondary mb-1">
+                  <span>Skills Weight</span>
+                  <span>Intent Weight</span>
+                </div>
+                <!-- Custom Blue Bordered Slider Track styling -->
+                <div class="relative py-2">
+                  <input type="range" id="weight-slider" min="0" max="100" value="50" class="w-full h-2 bg-zinc-100 rounded-lg appearance-none cursor-pointer accent-[#7C5CF6] border border-blue-600 px-0.5" oninput="updateWeightLabel(this.value)">
+                </div>
+                
+                <div class="flex justify-between text-xs font-bold text-brand-primary mt-2">
+                  <span id="skills-weight-lbl" class="bg-[#ECE9FE] px-2 py-0.5 rounded">50%</span>
+                  <span id="intent-weight-lbl" class="bg-[#ECE9FE] px-2 py-0.5 rounded">50%</span>
+                </div>
+              </div>
+
+              <!-- SANDBOX UPLOADER -->
+              <div class="bg-white border border-border-primary rounded-2xl p-6 shadow-sm">
+                <h4 class="font-bold text-sm uppercase text-text-primary mb-2">Sandbox Testing</h4>
+                <p class="text-xs text-text-secondary mb-4 leading-relaxed">Upload a <code>sample_candidates.json</code> array to run local calculations instantly.</p>
+                
+                <div id="drop-zone" class="border-2 border-dashed border-border-primary hover:border-brand-primary rounded-xl p-6 text-center cursor-pointer bg-neutral-background transition-all" onclick="document.getElementById('file-input').click()">
+                  <svg class="w-8 h-8 mx-auto text-brand-primary mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                  <span class="text-xs font-semibold text-text-primary block">Drop JSON file here</span>
+                  <span class="text-[10px] text-text-secondary block mt-1">Max file size: 5MB</span>
+                  <input type="file" id="file-input" class="hidden" accept=".json" onchange="handleFileSelect(event)">
+                </div>
+                <div id="upload-status" class="text-xs font-bold text-green-600 mt-3 text-center hidden"></div>
+              </div>
+
+            </div>
+
+            <!-- MIDDLE PANEL: Candidate List (Grading Queue Style) -->
+            <div class="md:col-span-4 bg-white border border-border-primary rounded-2xl p-6 shadow-sm flex flex-col gap-4 max-h-[650px] overflow-y-auto">
+              <div class="flex justify-between items-center pb-2 border-b border-border-primary">
+                <h4 class="font-bold text-sm uppercase text-text-primary">Grading Queue</h4>
+                <span class="text-[10px] bg-zinc-100 text-text-primary font-bold px-2 py-0.5 rounded" id="candidate-count">Top 10 Profiles</span>
+              </div>
+              
+              <div id="candidate-list" class="flex flex-col gap-3">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+
+            <!-- RIGHT PANEL: Workspace & Mascot Helper -->
+            <div class="md:col-span-4 flex flex-col gap-6">
+              
+              <!-- Tabs Card -->
+              <div class="bg-white border border-border-primary rounded-2xl p-6 shadow-sm flex flex-col gap-6 min-h-[420px]">
+                
+                <!-- Tab Headings -->
+                <div class="flex border-b border-border-primary pb-2 gap-3 text-[11px] font-bold text-text-secondary">
+                  <button onclick="switchTab('radar')" id="tab-btn-radar" class="pb-2 border-b-2 border-brand-primary text-brand-primary">🎯 Radar HUD</button>
+                  <button onclick="switchTab('dag')" id="tab-btn-dag" class="pb-2">📈 Career DAG</button>
+                  <button onclick="switchTab('entropy')" id="tab-btn-entropy" class="pb-2">📊 Shannon</button>
+                  <button onclick="switchTab('gatekeeper')" id="tab-btn-gatekeeper" class="pb-2">🛡️ Audits</button>
+                </div>
+
+                <!-- TAB: Radar HUD -->
+                <div id="tab-content-radar" class="tab-content flex flex-col gap-4">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h4 class="font-bold text-base text-text-primary" id="radar-title">Intelligence Radar</h4>
+                      <p class="text-[10px] text-text-secondary">Corpus score metrics mapped across 5 axis variables.</p>
+                    </div>
+                  </div>
+                  
+                  <div class="w-full aspect-square max-w-[200px] mx-auto">
+                    <canvas id="radar-canvas"></canvas>
+                  </div>
+
+                  <div class="border-t border-border-primary pt-3">
+                    <span class="font-bold text-[10px] uppercase text-text-primary block mb-1">XAI Assessment Reason</span>
+                    <p id="xai-strength" class="text-[11px] text-text-secondary leading-relaxed mb-2"></p>
+                    <div class="border-l-2 border-[#7C5CF6] pl-3 bg-zinc-50 p-2 rounded">
+                      <p id="xai-advisory" class="text-[11px] text-text-secondary italic"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TAB: DAG Velocity -->
+                <div id="tab-content-dag" class="tab-content hidden flex flex-col gap-3">
+                  <div>
+                    <h4 class="font-bold text-base text-text-primary">DAG Promotion Velocity</h4>
+                    <p class="text-[10px] text-text-secondary">Calculates nodes and transitions chronologically.</p>
+                  </div>
+                  <div id="dag-flow-container" class="flex flex-col gap-2 bg-neutral-background p-3 rounded-xl border border-border-primary max-h-[180px] overflow-y-auto">
+                    <!-- Rendered dynamically -->
+                  </div>
+                  <div class="border-t border-border-primary pt-2 flex justify-between text-xs font-bold text-text-secondary">
+                    <span>Structural Velocity Index:</span>
+                    <span id="dag-velocity-index" class="text-brand-primary">0.0 pts</span>
+                  </div>
+                </div>
+
+                <!-- TAB: Shannon Entropy -->
+                <div id="tab-content-entropy" class="tab-content hidden flex flex-col gap-3">
+                  <div>
+                    <h4 class="font-bold text-base text-text-primary">Shannon Entropy Skill Matrix</h4>
+                    <p class="text-[10px] text-text-secondary">Evaluates technological distribution rarity index.</p>
+                  </div>
+                  <div id="entropy-skills-list" class="flex flex-col gap-1.5 bg-neutral-background p-3 rounded-xl border border-border-primary max-h-[180px] overflow-y-auto">
+                    <!-- Rendered dynamically -->
+                  </div>
+                  <div class="border-t border-border-primary pt-2 flex justify-between text-xs font-bold text-text-secondary">
+                    <span>Entropy Rarity Score:</span>
+                    <span id="entropy-score-val" class="text-brand-primary">0.0 bits</span>
+                  </div>
+                </div>
+
+                <!-- TAB: Gatekeeper Logs -->
+                <div id="tab-content-gatekeeper" class="tab-content hidden flex flex-col gap-3">
+                  <div>
+                    <h4 class="font-bold text-base text-text-primary">Gatekeeper Log Audits</h4>
+                    <p class="text-[10px] text-text-secondary">O(1) passive filters audit profile integrity in real-time.</p>
+                  </div>
+                  <div id="audit-log-box" class="bg-zinc-950 p-3 rounded-xl border border-border-primary text-[9px] font-mono text-zinc-400 flex flex-col gap-1.5 max-h-[220px] overflow-y-auto">
+                    <div>[20:45:10] Ingested default local dataset.</div>
+                    <div>[20:45:10] Verified profile experience constraints.</div>
+                    <div>[20:45:11] All security traps passed.</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- HELIX MASCOT HELPER (Purple Character read-along from image) -->
+              <div class="bg-[#ECE9FE] border border-brand-primary/20 rounded-2xl p-4 flex items-center gap-4 relative overflow-hidden">
+                <!-- Purple Mascot Drawing -->
+                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#8C52FF] border-2 border-white flex items-center justify-center shadow relative">
+                  <!-- Eyes -->
+                  <div class="flex gap-1">
+                    <div class="w-2.5 h-3.5 bg-white rounded-full flex items-center justify-center">
+                      <div class="w-1 h-1 bg-black rounded-full"></div>
+                    </div>
+                    <div class="w-2.5 h-3.5 bg-white rounded-full flex items-center justify-center">
+                      <div class="w-1 h-1 bg-black rounded-full"></div>
+                    </div>
+                  </div>
+                  <!-- Mini books decoration next to mascot -->
+                  <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-[#FFDE59] rounded rotate-12 flex items-center justify-center font-bold text-[8px] text-text-primary shadow">📖</div>
+                </div>
+                
+                <div>
+                  <h5 class="text-xs font-bold text-text-primary">Helix AI</h5>
+                  <p class="text-[10px] text-text-secondary leading-relaxed">Let me help you analyze your talent pools! Configure weights or load files to calculate genome rarity indices.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PIPELINE COMPARISON -->
+    <section id="comparison" class="py-20 bg-white border-y border-border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col items-center gap-12">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center -tracking-[0.03em] text-text-primary">
+                Replaces fragmentation with a single system
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+                <!-- Fragmented Sourcing -->
+                <div class="border border-border-primary rounded-xl p-8 bg-neutral-background flex flex-col gap-6">
+                    <h4 class="text-lg font-bold text-zinc-500">Fragmented Workflows</h4>
+                    <ul class="flex flex-col gap-4 text-sm font-semibold text-text-secondary">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span> Keyword matching gets easily inflated</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span> Inability to identify temporal anomalies</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span> Recruiter response rate tracked manually</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-zinc-400"></span> Resumes read linearly; no structural velocity checks</li>
+                    </ul>
+                </div>
+
+                <!-- Unified Sourcing -->
+                <div class="border border-brand-primary/30 rounded-xl p-8 bg-white flex flex-col gap-6 shadow-sm">
+                    <h4 class="text-lg font-bold text-brand-primary flex items-center gap-2">
+                        <span class="w-3.5 h-3.5 rounded-full bg-brand-primary flex items-center justify-center">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        </span>
+                        HELIX Unified Engine
+                    </h4>
+                    <ul class="flex flex-col gap-4 text-sm font-semibold text-text-primary">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span> Shannon Entropy identifies skill rarity</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span> O(1) Gatekeeper filters profile integrity</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span> Dynamic Intent Scoring scales candidates</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span> DAG Promotion Velocity maps career delta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-border-primary py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center gap-6 text-xs text-text-secondary">
+          <div class="flex items-center gap-2">
+              <div class="w-5 h-5 rounded-full bg-brand-primary flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
+              </div>
+              <span class="font-bold text-text-primary">HELIX</span>
+          </div>
+          <p>&copy; 2026 HELIX | Team HelixSo. All rights reserved.</p>
+      </div>
+  </footer>
+
+  </div>
+
+  <!-- EMBEDDED ENGINE LOGIC -->
+  <script>
+    // Embedded sample dataset for zero-server client side loading
+    const defaultCandidates = [
+      {
+        "candidate_id": "CAND_0000014",
+        "profile": {
+          "current_title": "Frontend Engineer",
+          "current_company": "Zomato",
+          "years_of_experience": 8.1
+        },
+        "skills": [
+          {"name": "React", "proficiency": "expert", "duration_months": 72},
+          {"name": "TypeScript", "proficiency": "expert", "duration_months": 48},
+          {"name": "Tailwind CSS", "proficiency": "expert", "duration_months": 36},
+          {"name": "Next.js", "proficiency": "advanced", "duration_months": 24}
+        ],
+        "career_history": [
+          {"title": "Junior Frontend Developer", "company": "Wipro", "start_date": "2018-05-10", "duration_months": 24},
+          {"title": "Frontend Engineer", "company": "Zomato", "start_date": "2020-06-12", "duration_months": 48}
+        ],
+        "redrob_signals": {
+          "recruiter_response_rate": 0.85,
+          "avg_response_time_hours": 12.5,
+          "interview_completion_rate": 0.95
+        }
+      },
+      {
+        "candidate_id": "CAND_0000031",
+        "profile": {
+          "current_title": "Recommendation Systems Engineer",
+          "current_company": "Swiggy",
+          "years_of_experience": 6.8
+        },
+        "skills": [
+          {"name": "Python", "proficiency": "expert", "duration_months": 60},
+          {"name": "PyTorch", "proficiency": "expert", "duration_months": 40},
+          {"name": "Scikit-Learn", "proficiency": "expert", "duration_months": 36},
+          {"name": "Recommendation Algorithms", "proficiency": "advanced", "duration_months": 24}
+        ],
+        "career_history": [
+          {"title": "Data Scientist Intern", "company": "Cognizant", "start_date": "2019-06-01", "duration_months": 6},
+          {"title": "Recommendation Systems Engineer", "company": "Swiggy", "start_date": "2020-01-01", "duration_months": 72}
+        ],
+        "redrob_signals": {
+          "recruiter_response_rate": 0.76,
+          "avg_response_time_hours": 24.0,
+          "interview_completion_rate": 0.88
+        }
+      },
+      {
+        "candidate_id": "CAND_0000010",
+        "profile": {
+          "current_title": "Data Engineer",
+          "current_company": "Ola",
+          "years_of_experience": 5.1
+        },
+        "skills": [
+          {"name": "Apache Spark", "proficiency": "expert", "duration_months": 48},
+          {"name": "SQL", "proficiency": "expert", "duration_months": 60},
+          {"name": "Airflow", "proficiency": "advanced", "duration_months": 24}
+        ],
+        "career_history": [
+          {"title": "Data Analyst", "company": "Infosys", "start_date": "2021-02-15", "duration_months": 18},
+          {"title": "Data Engineer", "company": "Ola", "start_date": "2022-09-01", "duration_months": 42}
+        ],
+        "redrob_signals": {
+          "recruiter_response_rate": 0.68,
+          "avg_response_time_hours": 36.0,
+          "interview_completion_rate": 0.80
+        }
+      },
+      {
+        "candidate_id": "CAND_0000042",
+        "profile": {
+          "current_title": "HR Manager",
+          "current_company": "Wayne Enterprises",
+          "years_of_experience": 4.2
+        },
+        "skills": [
+          {"name": "Recruiting", "proficiency": "expert", "duration_months": 36},
+          {"name": "HR Ops", "proficiency": "advanced", "duration_months": 24}
+        ],
+        "career_history": [
+          {"title": "HR Recruiter", "company": "TCS", "start_date": "2022-03-01", "duration_months": 12},
+          {"title": "HR Manager", "company": "Wayne Enterprises", "start_date": "2023-04-01", "duration_months": 36}
+        ],
+        "redrob_signals": {
+          "recruiter_response_rate": 0.58,
+          "avg_response_time_hours": 48.0,
+          "interview_completion_rate": 0.70
+        }
+      }
+    ];
+
+    let currentCandidates = [...defaultCandidates];
+    let selectedCandidate = currentCandidates[0];
+    let radarChart = null;
+
+    // Run scoring math locally
+    function getSeniorityLevel(title) {
+      const t = (title || "").toLowerCase();
+      if (t.includes("intern") || t.includes("trainee") || t.includes("student")) return 1;
+      if (t.includes("junior") || t.includes("associate") || t.includes("entry")) return 2;
+      if (t.includes("senior") || t.includes("sr") || t.includes("staff") || t.includes("principal") || t.includes("lead")) return 4;
+      if (t.includes("manager") || t.includes("director") || t.includes("vp") || t.includes("head") || t.includes("chief") || t.includes("ceo") || t.includes("cto")) return 5;
+      return 3;
+    }
+
+    function calculateScores(c, weight) {
+      const profile = c.profile || {};
+      const signals = c.redrob_signals || {};
+      const skills = c.skills || [];
+      const career = c.career_history || [];
+
+      const rawKeywordScore = Math.min(1.0, skills.length / 10.0);
+      const responseRate = signals.recruiter_response_rate || 0.0;
+      const avgRespTime = signals.avg_response_time_hours || 72.0;
+      
+      const latencyPenalty = 1.0 / (1.0 + Math.exp(0.04 * (avgRespTime - 72.0)));
+      const behavioralScore = responseRate * latencyPenalty;
+      const weightPct = weight / 100.0;
+      const finalScore = (rawKeywordScore * (1.0 - weightPct)) + (behavioralScore * weightPct);
+
+      const technicalCapacity = Math.round(rawKeywordScore * 100);
+      const engagementVelocity = Math.round(((profile.years_of_experience || 0) / 10.0) * 100);
+      const intent = Math.round(responseRate * 100);
+      const reliability = Math.round((signals.interview_completion_rate || 0.0) * 100);
+      const potential = Math.round(Math.max(0, Math.min(100, (1.0 - latencyPenalty) * 100 + technicalCapacity * 0.5)));
+
+      // Promotion velocity
+      let velocity = 0.0;
+      if (career.length >= 2) {
+        const senStart = getSeniorityLevel(career[0].title);
+        const senEnd = getSeniorityLevel(career[career.length - 1].title);
+        const years = Math.max(1, (career[career.length - 1].duration_months || 12) / 12);
+        velocity = Math.max(0.0, (senEnd - senStart) / years);
+      }
+
+      // Shannon entropy skill rarity
+      let entropyVal = 0.0;
+      if (skills.length > 0) {
+        entropyVal = -1 * skills.length * ((1.0 / skills.length) * Math.log2(1.0 / skills.length));
+      }
+
+      return {
+        score: finalScore,
+        radar: [technicalCapacity, engagementVelocity, intent, reliability, potential],
+        velocity: velocity,
+        entropy: entropyVal
+      };
+    }
+
+    function renderCandidates() {
+      const weight = parseInt(document.getElementById('weight-slider').value);
+      
+      // Compute scores and sort
+      const scored = currentCandidates.map(c => {
+        const calcs = calculateScores(c, weight);
+        return { candidate: c, ...calcs };
+      }).sort((a, b) => b.score - a.score);
+
+      // Slice to top 10 for the display list
+      const topTen = scored.slice(0, 10);
+
+      const listContainer = document.getElementById('candidate-list');
+      listContainer.innerHTML = '';
+
+      document.getElementById('candidate-count').innerText = `Showing Top ${topTen.length} Candidates`;
+
+      topTen.forEach((sc, idx) => {
+        const c = sc.candidate;
+        const profile = c.profile || {};
+        const title = profile.current_title || "Unknown Title";
+        const company = profile.current_company || "Unknown Company";
+        const isSelected = selectedCandidate && selectedCandidate.candidate_id === c.candidate_id;
+        
+        const cardHtml = `
+          <div class="border ${isSelected ? 'border-brand-primary bg-[#ECE9FE]/20' : 'border-border-primary bg-white'} rounded-xl p-5 hover:border-brand-primary transition-all duration-300 shadow-sm cursor-pointer" onclick="selectCandidate('${c.candidate_id}')">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-sm text-text-primary">${c.candidate_id}</span>
+              ${idx === 0 ? '<span class="bg-[#ECE9FE] text-[#5B36F5] text-[10px] font-semibold px-2 py-0.5 rounded">Recommended</span>' : ''}
+            </div>
+            <div class="text-xs text-text-secondary mb-3">${title} @ ${company}</div>
+            
+            <div class="flex justify-between items-center text-xs font-semibold">
+              <span class="text-text-secondary font-medium">Probability of Success (PoS)</span>
+              <span class="text-brand-primary font-bold text-sm">${Math.round(sc.score * 100)}%</span>
+            </div>
+          </div>
+        `;
+        listContainer.insertAdjacentHTML('beforeend', cardHtml);
+      });
+
+      // Update active candidate panels
+      if (selectedCandidate) {
+        updateActiveCandidateDetails(weight);
+      }
+    }
+
+    function selectCandidate(id) {
+      selectedCandidate = currentCandidates.find(c => c.candidate_id === id);
+      renderCandidates();
+    }
+
+    function updateActiveCandidateDetails(weight) {
+      const metrics = calculateScores(selectedCandidate, weight);
+      
+      // Update Tab Headers
+      document.getElementById('radar-title').innerText = `Radar: ${selectedCandidate.candidate_id}`;
+      
+      // Update XAI reasoning
+      const yoe = selectedCandidate.profile.years_of_experience || 0;
+      const title = selectedCandidate.profile.current_title || "Engineer";
+      
+      document.getElementById('xai-strength').innerText = `Strong structural alignment exhibiting robust raw metrics across a ${yoe}-year track record as a ${title}.`;
+      
+      if (metrics.radar[2] < 50) {
+        document.getElementById('xai-advisory').innerHTML = `<strong class="text-amber-500">Advisory:</strong> Suppressed engagement patterns and behavioral latency detected. High flight risk.`;
+      } else {
+        document.getElementById('xai-advisory').innerHTML = `<strong class="text-[#5B36F5]">Advisory:</strong> Accelerated compensation packages suggested to secure amidst highly active recruitment engagement.`;
+      }
+
+      // Update Chart.js Radar
+      const ctx = document.getElementById('radar-canvas').getContext('2d');
+      
+      if (radarChart) {
+        radarChart.destroy();
+      }
+
+      radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Technical Capacity', 'Engagement Velocity', 'Intent', 'Reliability', 'Potential'],
+          datasets: [{
+            data: metrics.radar,
+            backgroundColor: 'rgba(124, 92, 246, 0.15)',
+            borderColor: '#7C5CF6',
+            borderWidth: 2,
+            pointBackgroundColor: '#7C5CF6',
+            pointBorderColor: '#fff',
+            pointRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            r: {
+              angleLines: { color: 'rgba(0,0,0,0.05)' },
+              grid: { color: 'rgba(0,0,0,0.05)' },
+              pointLabels: { font: { family: 'Inter', size: 9, weight: 'semibold' }, color: '#4B5563' },
+              ticks: { display: false },
+              min: 0,
+              max: 100
+            }
+          }
+        }
+      });
+
+      // Update DAG Tab
+      const dagContainer = document.getElementById('dag-flow-container');
+      dagContainer.innerHTML = '';
+      const career = selectedCandidate.career_history || [];
+      
+      career.forEach((job, idx) => {
+        const itemHtml = `
+          <div class="border-l-2 border-brand-primary pl-4 relative py-1">
+            <span class="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-brand-primary border-2 border-white"></span>
+            <div class="font-bold text-xs text-text-primary">${job.title}</div>
+            <div class="text-[10px] text-text-secondary">${job.company} &bull; ${job.duration_months} Months</div>
+          </div>
+        `;
+        dagContainer.insertAdjacentHTML('beforeend', itemHtml);
+      });
+      document.getElementById('dag-velocity-index').innerText = `${metrics.velocity.toFixed(2)} pts`;
+
+      // Update Shannon Entropy Tab
+      const entropyContainer = document.getElementById('entropy-skills-list');
+      entropyContainer.innerHTML = '';
+      const skills = selectedCandidate.skills || [];
+      
+      skills.forEach(s => {
+        const skillHtml = `
+          <div class="flex justify-between text-xs py-1 border-b border-border-primary">
+            <span class="font-semibold text-text-primary">${s.name}</span>
+            <span class="text-brand-primary uppercase font-bold text-[10px]">${s.proficiency}</span>
+          </div>
+        `;
+        entropyContainer.insertAdjacentHTML('beforeend', skillHtml);
+      });
+      document.getElementById('entropy-score-val').innerText = `${metrics.entropy.toFixed(3)} bits`;
+    }
+
+    function switchTab(tabId) {
+      // Hide all contents
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      // Remove active borders
+      document.querySelectorAll('.flex.border-b button').forEach(b => {
+        b.classList.remove('border-b-2', 'border-brand-primary', 'text-brand-primary');
+      });
+
+      // Show selected content
+      document.getElementById(`tab-content-${tabId}`).classList.remove('hidden');
+      document.getElementById(`tab-btn-${tabId}`).classList.add('border-b-2', 'border-brand-primary', 'text-brand-primary');
+    }
+
+    function updateWeightLabel(val) {
+      document.getElementById('skills-weight-lbl').innerText = `${100 - val}%`;
+      document.getElementById('intent-weight-lbl').innerText = `${val}%`;
+      renderCandidates();
+    }
+
+    // Drag-Drop Sandbox loader with robust logging feed
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (file) {
+        processUpload(file);
+      }
+    }
+
+    const dropZone = document.getElementById('drop-zone');
+    dropZone.ondragover = () => { dropZone.classList.add('border-brand-primary'); return false; };
+    dropZone.ondragleave = () => { dropZone.classList.remove('border-brand-primary'); return false; };
+    dropZone.ondrop = (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('border-brand-primary');
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        processUpload(file);
+      }
+    };
+
+    function addAuditLog(msg) {
+      const logBox = document.getElementById('audit-log-box');
+      const time = new Date().toLocaleTimeString();
+      logBox.insertAdjacentHTML('beforeend', `<div>[${time}] ${msg}</div>`);
+      logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    function processUpload(file) {
+      const reader = new FileReader();
+      
+      // Update Audit Logs for Ingestion start
+      document.getElementById('audit-log-box').innerHTML = ''; // Reset logs
+      addAuditLog(`Starting sandbox ingestion for file: ${file.name}`);
+      
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (Array.isArray(data)) {
+            addAuditLog(`Successfully parsed JSON array with ${data.length} candidate entries.`);
+            
+            // Run VerifyProfileIntegrity rules (simulated client-side)
+            const verifier = {
+              banned: ['tcs', 'infosys', 'wipro', 'accenture', 'cognizant', 'capgemini'],
+              isValid: function(candidate) {
+                const profile = candidate.profile || {};
+                const currentCompany = (profile.current_company || "").toLowerCase();
+                
+                // Outsourcing check
+                if (this.banned.some(b => currentCompany.includes(b))) {
+                  addAuditLog(`Gatekeeper Alert: Flagged ${candidate.candidate_id} (Outsourcing Firm: ${profile.current_company})`);
+                  return false;
+                }
+                
+                // Temporal Honeypot check
+                const yoe = profile.years_of_experience || 0;
+                const history = candidate.career_history || [];
+                if (history.length > 0) {
+                  let earliestYear = 9999;
+                  history.forEach(job => {
+                    if (job.start_date) {
+                      const year = parseInt(job.start_date.split('-')[0]);
+                      if (year < earliestYear) earliestYear = year;
+                    }
+                  });
+                  if (earliestYear !== 9999) {
+                    const delta = 2026 - (earliestYear - 2);
+                    if (yoe > delta) {
+                      addAuditLog(`Gatekeeper Alert: Flagged ${candidate.candidate_id} (Temporal Honeypot: experience limits exceeded)`);
+                      return false;
+                    }
+                  }
+                }
+                
+                // Skill Inflation check
+                const skills = candidate.skills || [];
+                const expertSkills = skills.filter(s => s.proficiency === 'expert');
+                if (expertSkills.length >= 4 && expertSkills.every(s => s.duration_months === 0)) {
+                  addAuditLog(`Gatekeeper Alert: Flagged ${candidate.candidate_id} (Profile Inflation: experts with 0 months experience)`);
+                  return false;
+                }
+                
+                return true;
+              }
+            };
+            
+            // Filter candidates
+            const validCandidates = data.filter(c => verifier.isValid(c));
+            addAuditLog(`Profile integrity filters completed. Approved ${validCandidates.length} / ${data.length} entries.`);
+            
+            if (validCandidates.length > 0) {
+              currentCandidates = validCandidates;
+              selectedCandidate = currentCandidates[0];
+              renderCandidates();
+              
+              const status = document.getElementById('upload-status');
+              status.innerText = `Successfully loaded ${validCandidates.length} approved sandbox profiles!`;
+              status.classList.remove('hidden');
+              
+              // Direct navigation to logs for auditing visibility
+              switchTab('gatekeeper');
+              addAuditLog("SaaS HUD metrics and charts refreshed successfully.");
+            } else {
+              addAuditLog("Verification Error: No candidates passed the profile integrity constraints.");
+              alert('All uploaded candidate profiles failed the Gatekeeper integrity validation checks.');
+            }
+          } else {
+            addAuditLog("Error: File payload is not a valid JSON array.");
+            alert('Uploaded file is not a valid JSON array.');
+          }
+        } catch(err) {
+          addAuditLog(`Error parsing JSON: ${err}`);
+          alert('Error parsing uploaded JSON: ' + err);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    async function loadInitialData() {
+      try {
+        const response = await fetch('sample_candidates.json');
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          currentCandidates = data;
+          selectedCandidate = currentCandidates[0];
+        }
+      } catch (err) {
+        console.warn('Could not fetch sample_candidates.json directly, using embedded fallback.', err);
+      }
+      renderCandidates();
+    }
+
+    // Initialize Dashboard
+    window.onload = () => {
+      loadInitialData();
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# Compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Large challenge datasets & indices (must not be committed to GitHub)
+candidates.jsonl
+candidates.jsonl.gz
+helix_index.faiss
+
+# Submission Results (Ignored per checklist rules, uploaded directly to portal)
+submission.csv
+team_xxx.csv
+team_HelixSo.csv
+
+# Local dev/test outputs
+sandbox_candidates.jsonl
+sandbox_results.csv
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
