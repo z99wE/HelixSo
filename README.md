@@ -1,3 +1,12 @@
+---
+title: HelixSo
+emoji: 🧬
+colorFrom: purple
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # HELIX | Command Center
 ### Next-Gen Talent Genome & Enterprise Intelligence Engine
 
