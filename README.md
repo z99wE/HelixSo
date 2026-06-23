@@ -119,3 +119,8 @@ The interactive candidate command center is deployed live on Hugging Face Spaces
 🔗 **Live Demo URL**: [https://huggingface.co/spaces/sf0Jmn/HelixSo](https://huggingface.co/spaces/sf0Jmn/HelixSo)
 
 To deploy updates, push your repository files directly to the Hugging Face Space's git remote. The container will automatically rebuild and serve the HTML dashboard.
+
+---
+
+*Vibe engineered by AI agent IDE tools.*
+
