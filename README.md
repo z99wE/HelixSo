@@ -114,10 +114,8 @@ The HELIX submission has been verified against the official hackathon criteria:
 ---
 
 ## 7. Hugging Face Spaces Deployment
-To deploy this exact interactive engine to Hugging Face Spaces:
-1. Create a new Space on Hugging Face.
-2. Select **Streamlit** as the SDK (instead of Gradio/Docker, as Streamlit is natively supported out-of-the-box).
-3. Push your repository files directly to the Hugging Face Space's git remote. 
-The space will automatically read `requirements.txt` and launch `app.py` as the main landing page/dashboard application.
+The interactive candidate command center is deployed live on Hugging Face Spaces:
 
+🔗 **Live Demo URL**: [https://huggingface.co/spaces/sf0Jmn/HelixSo](https://huggingface.co/spaces/sf0Jmn/HelixSo)
 
+To deploy updates, push your repository files directly to the Hugging Face Space's git remote. The container will automatically rebuild and serve the HTML dashboard.
